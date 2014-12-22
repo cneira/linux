@@ -5,6 +5,7 @@ CPPFLAGS += -I. \
 	-I../linux \
 	-I../libproc/common \
 	-I../libctf/ \
+	-I/usr/include/libelf \
 	-DCTF_OLD_VERSIONS $(PTR32)
 #CPPFLAGS += -DYY_NO_INPUT
 

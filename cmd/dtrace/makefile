@@ -1,4 +1,4 @@
-CFLAGS=-g -W $(PTR32) $(BUILD_BITS)
+CFLAGS=-g -W $(PTR32) $(BUILD_BITS) -I/usr/include/libelf
 LIBELF=/usr/lib/libelf.so.1
 BINDIR=../../$(BUILD_DIR)
 LIBS = \
@@ -9,7 +9,7 @@ LIBS = \
 
 COMPILE = $(CC) $(CFLAGS) -o $(BINDIR)/dtrace \
 		-L$(BINDIR) $$LIB32 \
-		$(BINDIR)/dtrace.o -ldtrace -lctf -lproc -llinux -lz -lrt -lpthread $$libelf -ldl
+		$(BINDIR)/dtrace.o -ldtrace -lctf -lproc -llinux -lz -lrt -lpthread $$libelf -ldl  -I/usr/include/libelf
 
 all:	$(BINDIR)/dtrace $(BINDIR)/dwarf
 	@/bin/true
@@ -42,11 +42,12 @@ $(BINDIR)/dtrace.o: dtrace.c
 		-I../../libdtrace \
 		-I../../libproc/common \
 		-I../../linux \
+		-I/usr/include/libelf \
 		dtrace.c
 	mv dtrace.o $(BINDIR)
 
 $(BINDIR)/dwarf: ../../driver/dwarf.c
-	$(CC) -o $(BINDIR)/dwarf ../../driver/dwarf.c -lelf
+	$(CC) -o $(BINDIR)/dwarf ../../driver/dwarf.c -lelf -I/usr/include/libelf
 
 test:
 	./dtrace -x nolibs -n BEGIN -e -S

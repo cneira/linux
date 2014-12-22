@@ -1,6 +1,6 @@
 CC=gcc -g $(BUILD_BITS)
 COMMON = ../common/ctf
-CPPFLAGS += -I../common -I../common/ctf -I../uts/common/ \
+CPPFLAGS += -I../common -I../common/ctf -I../uts/common/ -I/usr/include/libelf \
 	-I$(COMMON) -I. \
 	-I../linux -DCTF_OLD_VERSIONS $(PTR32)
 CPPFLAGS += -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -D_FILE_OFFSET_BITS=64

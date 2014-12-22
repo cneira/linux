@@ -1,0 +1,6 @@
+Building on slackware:
+The only modifications done were on the location of gelf.h header, that in other distros is assumed in /usr/include in slackware the location is /usr/include/libelf.
+Also the libdwarf sources are included as libdwarf is a dependency.
+
+
+cneirabustos@gmail.com

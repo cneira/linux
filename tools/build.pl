@@ -60,7 +60,7 @@ sub main
 		mkdir("$build_dir/driver", 0755) || die "Cannot mkdir $build_dir/driver -- $!";
 	}
 
-	if (! -f "/usr/include/gelf.h") {
+	if (! -f "/usr/include/libelf/gelf.h") {
 		print "Error: you dont appear to have /usr/include/gelf.h, which means\n";
 		print "compilation will fail. You should add the libelf-dev package to\n";
 		print "your system and retry the 'make all'.\n";

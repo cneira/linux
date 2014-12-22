@@ -18,7 +18,7 @@ HDRS = \
 	utils.h
 
 CC = gcc -g -I. -I../../ -I../../libctf -I../../common \
-	-I../../uts/common -I../../linux -I/usr/include/libdwarf
+	-I../../uts/common -I../../linux -I/usr/include/libdwarf -I/usr/include/libelf
 
 BINDIR = ../../build
 OBJDIR = ../../build/ctfconvert.obj

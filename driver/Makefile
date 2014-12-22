@@ -82,6 +82,7 @@ EXTRA_CFLAGS += -g -gdwarf-2 \
 	-I$(M)/../../linux \
 	-I$(M)/../../common/ctf \
 	-I$(M)/../../uts/common \
+	-I/usr/include/libelf   \
 	-D_KERNEL -DCTF_OLD_VERSIONS $(PTR32)
 
 ######################################################################
