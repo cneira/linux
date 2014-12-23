@@ -24,7 +24,6 @@
  * Use is subject to license terms.
  */
 
-#pragma ident	"@(#)dtrace.c	1.25	06/09/19 SMI"
 
 #include <sys/types.h>
 #include <sys/stat.h>

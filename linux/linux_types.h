@@ -112,7 +112,6 @@ struct modctl;
 	/*   Linux 2.6.9			       */
 	/***********************************************/
 	# if !defined(task_pt_regs)
-//	#	define task_pt_regs(task) ((struct pt_regs *) (task)->thread.sp0 - 1)
 	#	define task_pt_regs(task) ((struct pt_regs *) (task)->thread.rsp0 - 1)
 	# endif
 
@@ -249,22 +248,15 @@ typedef unsigned long long hrtime_t;
 	#     include <linux/slab.h>
 	# endif
 
-/* see cpuvar.h
-	#if defined(__i386) || defined(__amd64)
-	typedef uchar_t instr_t;
-	#endif
-
-	# if defined(__arm__)
-	typedef uint32_t instr_t;
-	# endif
-
-*/	/***********************************************/
+	
+	/***********************************************/
 	/*   Define our own private mutexes so we can  */
 	/*   avoid  problems  and clashes with kernel  */
 	/*   implemented ones. Our mutexes are really  */
 	/*   semaphores,  since we cannot use a mutex  */
 	/*   inside an interrupt.		       */
 	/***********************************************/
+
 	typedef struct mutex_t {
 		struct semaphore m_sem;
 		void		*m_count;
@@ -287,13 +279,6 @@ typedef unsigned long long hrtime_t;
 	# include	<sys/cpuvar_defs.h>
 	# include	<sys/cpuvar.h>
 # endif /* __KERNEL__ */
-
-/**********************************************************************/
-/*   Made into functions so we can monitor memallocations.	      */
-/**********************************************************************/
-//#define kmem_zalloc(size, flags) kzalloc(size, flags)
-//#define kmem_alloc(size, flags) kmalloc(size, flags)
-//#define kmem_free(ptr, size) kfree(ptr)
 
 /**********************************************************************/
 /*   Definitions for both kernel and non-kernel code.		      */

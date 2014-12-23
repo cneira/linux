@@ -27,7 +27,6 @@
 #ifndef _SYS_SYSTRACE_H
 #define	_SYS_SYSTRACE_H
 
-//#pragma ident	"@(#)systrace.h	1.3	06/09/19 SMI"
 
 #include <sys/dtrace.h>
 

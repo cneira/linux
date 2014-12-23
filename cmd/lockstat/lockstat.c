@@ -7,7 +7,6 @@
  * http://www.opensolaris.org/license/ for details.
  */
 
-#pragma ident	"@(#)lockstat.c	1.12	04/11/17 SMI"
 
 #include <stdio.h>
 #include <stddef.h>

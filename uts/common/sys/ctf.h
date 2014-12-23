@@ -27,7 +27,6 @@
 #ifndef	_CTF_H
 #define	_CTF_H
 
-//#pragma ident	"@(#)ctf.h	1.5	05/06/08 SMI"
 
 #include <sys/types.h>
 

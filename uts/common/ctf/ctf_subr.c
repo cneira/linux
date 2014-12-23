@@ -7,7 +7,6 @@
  * http://www.opensolaris.org/license/ for details.
  */
 
-#pragma ident	"@(#)ctf_subr.c	1.2	04/05/22 SMI"
 
 #include <ctf_impl.h>
 #include <sys/kobj.h>
