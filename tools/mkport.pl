@@ -212,7 +212,7 @@ sub main
 	###############################################
 	#   Check for ELF_C_READ_MMAP		      #
 	###############################################
-	$str = `grep ELF_C_READ_MMAP /usr/include/libelf/libelf.h`;
+	$str = `grep ELF_C_READ_MMAP /usr/include/libelf.h`;
 	chomp($str);
 	if ($str ne '') {
 		$inc .= "# define HAVE_ELF_C_READ_MMAP 1\n";

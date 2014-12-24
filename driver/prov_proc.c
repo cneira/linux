@@ -42,7 +42,7 @@ psinfo_arg(int n, struct pt_regs *regs)
 	ps->pr_egid = current->egid;
 #endif
 	ps->pr_addr = current;
-	ps->pr_start = current->start_time;
+	ps->pr_start.tv_nsec =  current->start_time;
 	
 	return (uintptr_t) ps;
 }

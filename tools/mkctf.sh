@@ -21,10 +21,10 @@ pwd=`pwd`
 cd $build_dir
 cmd=`grep '^cmd_' $pwd/build/driver/.cpu_x86.o.cmd | 
 sed -e 's/^.* := //' |
-sed -e 's/-Wp,-MD[^ ]* /-gdwarf-2 /' |
+sed -e 's/-Wp,-MD[^ ]* /-gdwarf-2  /' |
 sed -e 's/\\\\//g' |
 sed -e 's/cpu_x86/ctf_struct/g' `
-#echo $cmd
+echo $cmd
 eval $cmd
 if [ $? != 0 ]; then
 	echo $cmd

@@ -17,7 +17,7 @@ HDRS = \
 	traverse.h \
 	utils.h
 
-CC = gcc -g -I. -I../../ -I../../libctf -I../../common \
+CC = gcc  -g -I. -I../../ -I../../libctf -I../../common \
 	-I../../uts/common -I../../linux -I/usr/include/libdwarf -I/usr/include/libelf
 
 BINDIR = ../../build
@@ -42,7 +42,7 @@ OBJ=	$(OBJDIR)/ctfconvert.o \
 	$(OBJDIR)/tdata.o \
 	$(OBJDIR)/traverse.o \
 	$(OBJDIR)/util.o
-LIBS = ../../build/libctf.a $(LIBDWARF) -lbfd -lelf -lz
+LIBS = ../../build/libctf.a  -L/usr/lib64 -ldwarf $(LIBDWARF) -lbfd -lelf -lz
 # Older machines used this. We may need to autodetect which is correct.
 #LIBS = ../../build/libctf.a $(LIBDWARF) -liberty -lelf -lz
 
@@ -110,7 +110,7 @@ $(OBJDIR)/dump.o: dump.c $(HDRS)
 	mv dump.o $(OBJDIR)
 
 $(OBJDIR)/dwarf.o: dwarf.c $(HDRS) ../../build/port.h
-	$(CC) -c dwarf.c
+	$(CC) -c dwarf.c  
 	mv dwarf.o $(OBJDIR)
 
 $(OBJDIR)/hash.o: hash.c $(HDRS)
